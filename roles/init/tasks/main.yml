@@ -1,0 +1,10 @@
+---
+- name: First Local Playbook 
+  debug:
+    msg: "Hello World !" 
+
+- name: Boostrap
+  include_tasks: boostrap.yml
+    
+- name: Setup docker
+  include_tasks: docker.yml

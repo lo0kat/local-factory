@@ -1,0 +1,16 @@
+---
+- name: Remove old docker dependencies
+  become: yes
+  package:
+    name: 
+     - docker-client
+     - docker-client-latest
+     - docker
+     - docker-common
+     - docker-latest
+     - docker-latest-logrotate
+     - docker-logrotate
+     - docker-selinux
+     - docker-engine-selinux
+     - docker-engine
+    state: absent
