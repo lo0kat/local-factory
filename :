@@ -16,19 +16,7 @@
     state: absent
 
 - name: Add the Official Docker repository   
-  become: yes
   get_url:
     url: https://download.docker.com/linux/fedora/docker-ce.repo
     dest: /etc/yum.repos.d/docker-ce.repo
-    mode: 0622
-
-- name: Install Docker CE
-  become: yes
-  package:
-    name:
-     - docker-ce  
-     - docker-ce-cli
-     - containerd.io
-     - docker-buildx-plugin
-     - docker-compose-plugin
-    state: present     
+    mode: 0700 
